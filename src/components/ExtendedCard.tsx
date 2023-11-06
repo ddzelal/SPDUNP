@@ -1,6 +1,8 @@
-import  { useState } from 'react';
+import  { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import backgroundImage from '../assets/images/skonp2.jpeg'
+import backgroundImage from '../assets/images/skonp4.jpeg'
+import images from '../assets/images/skonp2.jpeg'
+import Slider from 'react-slick';
 
 const Container = styled.div`
   padding: 20px;
@@ -13,7 +15,6 @@ const Container = styled.div`
   background-color: #494ca9;
   background-image: url(${backgroundImage});
   background-size: cover;
-
   &:hover {
     max-height: 100%;
   }
@@ -29,15 +30,15 @@ line-height: normal;
 `;
 
 const Content = styled.div`
-  overflow: hidden;
-  color: #FFF;
+overflow: hidden;
+color: #FFF;
 font-family: Open Sans;
 font-size: 20px;
 font-style: normal;
 font-weight: 400;
 line-height: 180%;
 background-color: rgba(0, 0, 0, 0.7); 
-border-radius: 10px;
+border-radius: 5px;
 padding: 10px;
 `;
 
@@ -48,20 +49,62 @@ const ExpandArrow = styled.span`
   transition: transform 0.3s ease;
   transform-origin: center; 
   color: #FFF;
-  ${Container}:hover & {
-    transform: scaleY(-1); 
+
+  &:hover {
+    opacity: 0.7;
   }
 `;
 
+const WrapperImage = styled.div`
+padding:20px
+`;
 
+const Image = styled.img``;
 interface Props {
   title: string;
   shortContent: string;
   fullContent: string;
 }
+const sliderSettingsDesktop = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 3, 
+  slidesToScroll: 1,
+};
+
+const sliderSettingsMobile = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1, 
+  slidesToScroll: 1,
+};
 
 const ExtendedCard = ({ title, shortContent, fullContent }: Props) => {
+  
+
+  
+
   const [expanded, setExpanded] = useState(false);
+
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const cards = [null,null,null,null,null,null,null,null,null];
+
+
+  useEffect(() => {
+    const handleWindowResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleWindowResize);
+
+    return () => {
+      window.removeEventListener('resize', handleWindowResize);
+    };
+  }, []);
+
+  const isMobile = windowWidth <= 768;
 
   const toggleExpand = () => {
     setExpanded(!expanded);
@@ -70,8 +113,15 @@ const ExtendedCard = ({ title, shortContent, fullContent }: Props) => {
   return (
     <Container>
       <Title>{title}</Title>
-      <Content>{expanded ? fullContent : shortContent}</Content>
-      <ExpandArrow onClick={toggleExpand}>▶</ExpandArrow>
+      <Content onClick={()=>{setExpanded(true)}}>{expanded ? fullContent : shortContent}</Content>
+      <ExpandArrow onClick={toggleExpand}>{expanded ? '▲' : '▼'}</ExpandArrow>
+    <WrapperImage>
+      <Slider  {...(isMobile ? sliderSettingsMobile : sliderSettingsDesktop)}>
+       {cards.map(()=>{
+        return <Image src={images}/>
+       })}
+        </Slider>
+        </WrapperImage>
     </Container>
   );
 };
