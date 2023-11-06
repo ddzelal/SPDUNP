@@ -18,9 +18,37 @@ function HomePage() {
     const navigation = useNavigate();
   return (
     <div>
-        <BackgroundImageHome>
+        <BackgroundImageHome style={{position:'relative'}} >
             <HeaderTitle>STUDENTSKI PARLAMENT U NOVOM PAZARU</HeaderTitle>
         </BackgroundImageHome>
+        <ImagesContainer>
+            <CardSkonp>
+                <CardSkonpTextHeader>skonp</CardSkonpTextHeader>
+                <CardSkonpText>
+                Već jedanaest godina za redom, studentska konferencija SKONP (Studentska konferencija Drzavnog univerziteta u Novom Pazaru) okuplja mlade i ambiciozne umove iz Srbije u cilju istraživanja novih horizonta znanja i inspiracije. Ova prestižna konferencija je postala simbol izvrsnosti i entuzijazma, privlačeći više od 350 učesnika.SKONP, dok ulazi u jedanaestu godinu, i dalje ostaje posvećen pružanju platforme mladim umovima iz Srbije da istraže, uče, rastu i povežu se.
+                </CardSkonpText>
+            </CardSkonp>
+            <ImageSkonpLine src={SkonpLine}/>
+            <ImagesRow>
+                <ImagesInRow src={Skonp1}/>
+                <ImagesInRow src={Skonp2}/>
+                <ImagesInRow src={Skonp3}/>
+            </ImagesRow>
+            <ImagesRow>
+                <ImagesInRow src={Skonp4}/>
+                <ImagesInRow src={Skonp5}/>
+                <ImagesInRow src={Skonp6}/>
+            </ImagesRow>
+            <ImagesRow>
+                <ImagesInRow src={Skonp7}/>
+                <ImagesInRow src={Skonp8}/>
+                <ImagesInRow src={Skonp9}/>
+            </ImagesRow>
+            <ImagesRow>
+                <ImagesInRow style={{width:'100%'}} src={RektorImg}/>
+            </ImagesRow>
+            <ImageSkonpLine style={{bottom:'0'}} src={SkonpLine}/>
+        </ImagesContainer>
         <SectionMoreAboutUs>
             <Line/>
             <HeaderMoreAboutUs>
@@ -51,34 +79,6 @@ function HomePage() {
             </ContentMoreAboutUs>
             <Line/>
         </SectionMoreAboutUs>
-        <ImagesContainer>
-            <CardSkonp>
-                <CardSkonpTextHeader>skonp</CardSkonpTextHeader>
-                <CardSkonpText>
-                Već jedanaest godina za redom, studentska konferencija SKONP (Studentska konferencija Drzavnog univerziteta u Novom Pazaru) okuplja mlade i ambiciozne umove iz Srbije u cilju istraživanja novih horizonta znanja i inspiracije. Ova prestižna konferencija je postala simbol izvrsnosti i entuzijazma, privlačeći više od 350 učesnika.SKONP, dok ulazi u jedanaestu godinu, i dalje ostaje posvećen pružanju platforme mladim umovima iz Srbije da istraže, uče, rastu i povežu se.
-                </CardSkonpText>
-            </CardSkonp>
-            <ImageSkonpLine src={SkonpLine}/>
-            <ImagesRow>
-                <ImagesInRow src={Skonp1}/>
-                <ImagesInRow src={Skonp2}/>
-                <ImagesInRow src={Skonp3}/>
-            </ImagesRow>
-            <ImagesRow>
-                <ImagesInRow src={Skonp4}/>
-                <ImagesInRow src={Skonp5}/>
-                <ImagesInRow src={Skonp6}/>
-            </ImagesRow>
-            <ImagesRow>
-                <ImagesInRow src={Skonp7}/>
-                <ImagesInRow src={Skonp8}/>
-                <ImagesInRow src={Skonp9}/>
-            </ImagesRow>
-            <ImagesRow>
-                <ImagesInRow style={{width:'100%'}} src={RektorImg}/>
-            </ImagesRow>
-            <ImageSkonpLine style={{bottom:'0'}} src={SkonpLine}/>
-        </ImagesContainer>
         <CardSkonpWrapper>
 
         <CardSkonpMobile>
@@ -97,7 +97,7 @@ function HomePage() {
                 <BackgroundImageHomePrevFot>
                     <KidsCardContainer>
                         <KidsText>Prostor gde se veze ne prekidaju nakon završenih studija! Naš Alumni Klub je zajednica strastvenih pojedinaca koji su svoje studentske dane proveli pod istim krovom, deleći ne samo učenje već i neprocenjiva prijateljstva i iskustva.</KidsText>
-                        <KidsButton>PROCITAJ VISE</KidsButton>
+                        <KidsButton onClick={()=>{ navigation('/alumni')}}>PROCITAJ VISE</KidsButton>
                     </KidsCardContainer>
                 </BackgroundImageHomePrevFot>
                 <Line/>

@@ -11,7 +11,7 @@ export const BackgroundImageHome = styled.div`
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
-  height: 90vh;
+  height: 100vh;
   padding: 20px;
   display: flex;
   align-items: center;
@@ -230,9 +230,8 @@ display: flex;
 `
 
 export const ImagesInRow = styled.img`
-width: calc(33.33% - 10px); 
+width: calc(33.33% - 0px); 
   height: auto;
-  opacity: 0.7;
 `;
 
 export const ImageSkonpLine = styled.img`
@@ -388,6 +387,7 @@ border: 1px solid #FFF9F9;
 background: rgba(7, 7, 7, 0.00);
 color: #FFF;
 padding: 10px;
+cursor: pointer;
 `
 
 export const BtnAllPrjects = styled.button`
