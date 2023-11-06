@@ -59,6 +59,10 @@ font-size: 48px;
 font-style: normal;
 font-weight: 700;
 line-height: normal;
+@media (max-width: 500px) {
+font-size: 32px;
+  }
+
 `;
 
 

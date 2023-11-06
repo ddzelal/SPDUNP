@@ -1,5 +1,5 @@
 import { Line } from "../home/style"
-import { BackgroundImageHome, ContainerForText, HeaderTitle, HeaderTitleText, SubTitleText, WhatIsAlumniContainer } from "./style."
+import { BackgroundImageHome, ConfirmButton, ContainerForText, FormStyle, HeaderTitle, HeaderTitleText, SubTitleText, WhatIsAlumniContainer } from "./style."
 
 function AlumniPage() {
   return (
@@ -24,6 +24,18 @@ function AlumniPage() {
         <WhatIsAlumniContainer>
             <ContainerForText>
                 <SubTitleText>Naš fakultet predstavlja posvećenost oblikovanju budućih lidera, inovatora i intelektualnih istraživača kroz izvanredno obrazovanje, inspirativno okruženje i podršku za lični i profesionalni razvoj. Naša strastvena misija je da pružimo studentima sveobuhvatno znanje i veštine koje će im omogućiti da donose pozitivne promene u društvu.</SubTitleText>
+            </ContainerForText>
+        </WhatIsAlumniContainer>
+        <WhatIsAlumniContainer>
+            <HeaderTitleText>UCLANI SE!</HeaderTitleText>
+            <ContainerForText style={{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center',gap:'5px'}}>
+                <FormStyle required  placeholder="Ime" />
+                <FormStyle required  placeholder="Prezime" />
+                <FormStyle  required placeholder="Stepen obrazovanja" />
+                <FormStyle  required placeholder="Email" />
+                <FormStyle  required placeholder="Broj telefona" />
+                <FormStyle  required placeholder="Radna pozicija (ako radite)" />
+                <ConfirmButton>SACUVAJ</ConfirmButton>
             </ContainerForText>
         </WhatIsAlumniContainer>
         <Line/>

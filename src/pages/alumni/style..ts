@@ -73,3 +73,19 @@ font-size: 20px;
 font-style: normal;
 font-weight: 400;
 line-height: 180.182%; /* 36.036px */`
+
+
+export const FormStyle = styled.input`
+width: 100%;
+background-color: transparent;
+padding: 10px;
+&::placeholder {
+  color: #fff;
+}
+`;
+
+export const ConfirmButton = styled.button`
+width: 100%;
+background-color: transparent;
+color: #fff;
+`;

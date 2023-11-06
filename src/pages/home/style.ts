@@ -1,23 +1,58 @@
 
 import styled from "styled-components";
 import homeBackgorundImage from '../../assets/images/FirstPage3.png';
+import homeMobileBackgorundImage from '../../assets/images/HomeMobileBackgroundImage.png';
 import precFotImg from '../../assets/images/kidsImg.jpeg'
 
 export const BackgroundImageHome = styled.div`
+  position: relative;
   background-color: #FEE8D0;
   background-image: url(${homeBackgorundImage});
   background-size: 100% 100%;
-  background-repeat: no-repeat; 
-  background-position: center center;
-  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
   height: 90vh;
+  padding: 20px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  flex-direction: column;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); 
+  }
   @media (max-width: 780px) {
-    height: 50vh;
-    background-size: cover;
+    background-image: url(${homeMobileBackgorundImage});
+  }
+
+`;
+
+export const HeaderTitle = styled.span`
+color: var(--Main-Red-Color, #D42029);
+font-family: Miriam Libre;
+font-size: 48px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+color: #E4007E, #35AAE2;
+
+background: linear-gradient( 
+            to left, #f32170, #ff6b08, 
+             #cf23cf, #eedd44); 
+        -webkit-text-fill-color: transparent; 
+        -webkit-background-clip: text;
+        position: relative;
+`;
+
+
+export const H1 = styled.h1`
+font-size: 52px;
+@media (max-width: 780px) {
+  font-size: 22px;
   }
 `;
 
