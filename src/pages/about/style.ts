@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import aboutBackgroundImage from '../../assets/images/aboutBackgroundImage.jpeg';
 
+
+
 export const BackgroundImageHome = styled.div`
   position: relative;
   background-color: #FEE8D0;
@@ -87,23 +89,12 @@ padding: 10px 10px 150px 10px !important;
 
 export const CardContainer = styled.div`
   background-color: #FEE8D0;
-  padding: 20px 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-
-  @media (max-width: 1000px) {
-    flex-direction: column;
-    width: 100%;
-    padding: 20px 10px;
-  }
-
-
+  padding: 25px 25px;
 `;
 
 export const Card = styled.div`
 flex: 1;
+margin: 5px;
 border-radius: 10px;
 border: 5px solid #D2212A;
 display: flex;

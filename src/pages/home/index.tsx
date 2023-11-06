@@ -1,4 +1,4 @@
-import { BackgroundImageHome, BackgroundImageHomePrevFot, ButtonSignUp, CardForMoreAboutUs, CardInsideText, CardSkonp, CardSkonpMobile, CardSkonpText, CardSkonpTextHeader, CardSkonpWrapper, ChaildCardMoreAboutUs, ContentMoreAboutUs, HeaderMoreAboutUs, HeaderMoreAboutUsText, ImageLogoFax, ImageSkonpLine, ImagesContainer, ImagesInRow, ImagesRow, KidsButton, KidsCardContainer, KidsText, Line, PrevFooter, PrevFooterText, SectionMoreAboutUs, TextCard } from "./style"
+import { BackgroundImageHome, BackgroundImageHomePrevFot, BtnAllPrjects, ButtonSignUp, CardForMoreAboutUs, CardInsideText, CardSkonp, CardSkonpMobile, CardSkonpText, CardSkonpTextHeader, CardSkonpWrapper, ChaildCardMoreAboutUs, ContentMoreAboutUs, HeaderMoreAboutUs, HeaderMoreAboutUsText, ImageLogoFax, ImageSkonpLine, ImagesContainer, ImagesInRow, ImagesRow, KidsButton, KidsCardContainer, KidsText, Line, PrevFooter, PrevFooterText, SectionMoreAboutUs, TextCard } from "./style"
 import LogoFax from '../../assets/images/logofax.png'
 import Skonp1 from '../../assets/images/skonp1.jpeg'
 import Skonp2 from '../../assets/images/skonp2.jpeg'
@@ -86,6 +86,7 @@ function HomePage() {
                 <CardSkonpText>
                 Već jedanaest godina za redom, studentska konferencija SKONP (Studentska konferencija Drzavnog univerziteta u Novom Pazaru) okuplja mlade i ambiciozne umove iz Srbije u cilju istraživanja novih horizonta znanja i inspiracije. Ova prestižna konferencija je postala simbol izvrsnosti i entuzijazma, privlačeći više od 350 učesnika.SKONP, dok ulazi u jedanaestu godinu, i dalje ostaje posvećen pružanju platforme mladim umovima iz Srbije da istraže, uče, rastu i povežu se.
                 </CardSkonpText>
+                <BtnAllPrjects>SVI PROJEKTI</BtnAllPrjects>
             </CardSkonpMobile>
         </CardSkonpWrapper>
         <Line/>

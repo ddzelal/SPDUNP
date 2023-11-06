@@ -259,6 +259,10 @@ font-style: normal;
 font-weight: 400;
 line-height: 180%;
 text-align: justify;
+@media (max-width: 550px) {
+
+  text-align: center;
+  }
 `;
 
 export const CardSkonpTextHeader = styled.span`
@@ -351,3 +355,15 @@ color: #FFF;
 padding: 10px;
 `
 
+export const BtnAllPrjects = styled.button`
+display: flex;
+width: 170px;
+padding: 10px 35px;
+justify-content: center;
+align-items: center;
+gap: 10px;
+flex-shrink: 0;
+border-radius: 10px;
+background: var(--Main-Red-Color, #D42029);
+color: #fff;
+`;

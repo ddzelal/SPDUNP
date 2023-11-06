@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import skonpLogo from '../assets/images/skonpLogo.png'
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 // import instagramIcon from '../assets/icons/instagram.svg'
 // import facebookIcon from '../assets/icons/facebook.svg'
 // import gmailIcon from '../assets/icons/gmail.svg'
@@ -94,7 +94,7 @@ const LinkText = styled(Link)`
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  text-decoration: none; // Uklonite podvučeno za stilizaciju linka
+  text-decoration: none; 
   position: relative;
 
   &::before {
@@ -107,7 +107,7 @@ const LinkText = styled(Link)`
     background: #FFF;
     transform: scaleX(0);
     transform-origin: left;
-    transition: transform 0.3s ease; // Glatki efekat tranzicije
+    transition: transform 0.3s ease; 
   }
 
   &:hover::before {
@@ -163,11 +163,29 @@ text-align: end;
 `;
 
 const Navbar = () => {
-  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false); // Dodajte stanje za mobilni meni
+  const location = useLocation();
+
+  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false); 
 
   const toggleMobileMenu = () => {
-    setMobileMenuOpen(!isMobileMenuOpen); // Funkcija za otvaranje/zatvaranje mobilnog menija
+    setMobileMenuOpen(!isMobileMenuOpen); 
   };
+
+
+   const handleTitleName = (locationPath:string) => {
+    switch(locationPath){
+      case '/projects':
+        return 'PROJEKTI';
+      case '/alumni':
+        return "ALUMNI";
+      case '/about':
+        return "O NAMA";
+      default:
+        return 'POČETNA'
+    }
+
+  }
+
   return (
     <React.Fragment>
     <NavbarWrapper>
@@ -180,24 +198,24 @@ const Navbar = () => {
                 <ImitationIcon/>
                 <ImitationIcon/>
                 <NavbarInfoText>IMAŠ PITANJE? POZOVI: 020 331-338</NavbarInfoText>
-                <NavbarProjectText>PROJEKTI</NavbarProjectText>
+                <NavbarProjectText>{handleTitleName(location.pathname)}</NavbarProjectText>
             </RightContainerFirst>
             <RightContainerSeccound>
                 <LinkText to='/'>POČETNA</LinkText>
                 <LinkText to='/projects'>PROJEKTI</LinkText>
                 <LinkText to='/alumni'>ALUMNI</LinkText>
-                <LinkText to='/about'>KONTAKT</LinkText>
+                <LinkText to='/about'>O NAMA</LinkText>
             </RightContainerSeccound>
             <MobileMenuIcon onClick={toggleMobileMenu}>☰</MobileMenuIcon>
         </RightContainer>
     </NavbarWrapper>
     <NavbarMobileWrapper>
     {isMobileMenuOpen && ( 
-        <DivForMobileLinke>
+        <DivForMobileLinke onClick={()=>{toggleMobileMenu()}}>
            <LinkText to='/'>POČETNA</LinkText>
                 <LinkText to='/projects'>PROJEKTI</LinkText>
                 <LinkText to='/alumni'>ALUMNI</LinkText>
-                <LinkText to='/about'>KONTAKT</LinkText>
+                <LinkText to='/about'>O NAMA</LinkText>
         </DivForMobileLinke>
       )}
     </NavbarMobileWrapper>
